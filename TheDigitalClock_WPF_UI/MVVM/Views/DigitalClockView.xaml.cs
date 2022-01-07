@@ -18,9 +18,9 @@ namespace TheDigitalClock_WPF_UI.MVVM.Views
     /// <summary>
     /// Interaction logic for DigitClockView.xaml
     /// </summary>
-    public partial class DigitClockView : UserControl
+    public partial class DigitalClockView : UserControl
     {
-        public DigitClockView()
+        public DigitalClockView()
         {
             InitializeComponent();
         }

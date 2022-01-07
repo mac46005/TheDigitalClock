@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TheDigitalClock_WPF_UI.MVVM.Views.DigitClockView"
+﻿<UserControl x:Class="TheDigitalClock_WPF_UI.MVVM.Views.DigitalClockView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,13 +13,20 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Viewbox Grid.Column="0">
-                <Label Content="DATE"
-                       Style="{StaticResource DateTimeLabel}"/>
+                <Label Content="{Binding Date}"
+                       Foreground="white"
+                       />
             </Viewbox>
             <Viewbox Grid.Column="1">
-                <Label Content="TIME"
-                       Style="{StaticResource DateTimeLabel}"/>
+                <Label Content="{Binding Time}" 
+                       Foreground="White"
+                       />
             </Viewbox>
+            
+
+
+                
+
             
             
         </Grid>

@@ -14,10 +14,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Label">
                     <Border>
-                        <StackPanel Orientation="Vertical">
-                            <Label Content="{TemplateBinding Content}"
-                                   Width="{Binding,RelativeSource={RelativeSource Self},Path=ActualWidth}"/>
-                        </StackPanel>
+                        <Label Content="{TemplateBinding Content}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

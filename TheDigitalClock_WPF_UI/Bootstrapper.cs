@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using TheDigitalClock_WPF_UI.MVVM.ViewModels;
 
 namespace TheDigitalClock_WPF_UI
 {
@@ -13,7 +15,7 @@ namespace TheDigitalClock_WPF_UI
 
         public Bootstrapper()
         {
-
+            Initialize();
         }
 
         protected override void Configure()
@@ -32,7 +34,10 @@ namespace TheDigitalClock_WPF_UI
                 .ToList()
                 .ForEach(vm => _container.RegisterPerRequest(vm, vm.ToString(), vm));
         }
-
+        protected override void OnStartup(object sender, StartupEventArgs e)
+        {
+            DisplayRootViewFor<ShellViewModel>();
+        }
 
         protected override object GetInstance(Type service, string key)
         {

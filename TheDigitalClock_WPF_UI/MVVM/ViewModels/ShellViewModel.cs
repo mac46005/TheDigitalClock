@@ -14,6 +14,7 @@ namespace TheDigitalClock_WPF_UI.MVVM.ViewModels
         {
             _events = events;
             _events.Subscribe(this);
+            ActivateItem(IoC.Get<DigitalClockViewModel>());
         }
     }
 }
