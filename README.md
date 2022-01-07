@@ -1,4 +1,5 @@
-![TheDigitalClock](The_Digital_Clock.png)
+
+![TheDigitalClock](TheDigitalClockBanner.png)
 
 # TheDigitalClock
 Very Simple Digital Clock
