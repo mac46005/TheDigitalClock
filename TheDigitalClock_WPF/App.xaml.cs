@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using TheDigitalClock_WPF.MVVM.ViewModels;
 
 namespace TheDigitalClock_WPF
 {
@@ -16,6 +17,17 @@ namespace TheDigitalClock_WPF
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            Bootstrapper.StartConfiguration();
+            var window = new MainWindow();
+            window.DataContext = Bootstrapper.Resolve<MainViewModel>();
+
+            window.Closed += Window_Closed;
+            window.Show();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Bootstrapper.Dispose();
         }
     }
 }
