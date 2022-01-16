@@ -15,7 +15,7 @@
     <Folder Include="Assets\Images\" />
     <Folder Include="Assets\ResourceDictionaries\" />
     <Folder Include="MVVM\Models\" />
-    <Folder Include="MVVM\ViewModels\" />
+    <Folder Include="MVVM\Views\" />
   </ItemGroup>
 
 </Project>
