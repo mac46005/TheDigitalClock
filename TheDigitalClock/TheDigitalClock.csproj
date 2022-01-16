@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets\Fonts\" />
     <Folder Include="Assets\Images\" />
-    <Folder Include="MVVM\Models\" />
   </ItemGroup>
 
 </Project>

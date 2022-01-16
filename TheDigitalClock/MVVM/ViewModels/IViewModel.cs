@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheDigitalClock_WPF.MVVM.ViewModels
+namespace TheDigitalClock.MVVM.ViewModels
 {
-    public interface IViewModel : INotifyPropertyChanged, IDisposable
+    public interface IViewModel : INotifyPropertyChanged
     {
     }
 }

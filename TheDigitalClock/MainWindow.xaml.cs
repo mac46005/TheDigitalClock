@@ -13,16 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TheDigitalClock_WPF.MVVM.Views
+namespace TheDigitalClock
 {
     /// <summary>
-    /// Interaction logic for DigitalClockView.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class DigitalClockView : UserControl
+    public partial class MainWindow : Window
     {
-        public DigitalClockView()
+        public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

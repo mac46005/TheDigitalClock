@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TheDigitalClock_WPF
+namespace TheDigitalClock.MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DigitClockView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DigitClockView : UserControl
     {
-        public MainWindow()
+        public DigitClockView()
         {
             InitializeComponent();
         }
