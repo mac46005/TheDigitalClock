@@ -18,7 +18,11 @@ namespace TheDigitalClock_WPF.MVVM.ViewModels
         public string TheDate
         {
             get { return _theDate; }
-            set { _theDate = value; }
+            set 
+            { 
+                _theDate = value;
+                OnPropertyChanged(TheDate);
+            }
         }
 
 
@@ -27,7 +31,11 @@ namespace TheDigitalClock_WPF.MVVM.ViewModels
         public string TheTime
         {
             get { return _theTime; }
-            set { _theTime = value; }
+            set 
+            {
+                _theTime = value;
+                OnPropertyChanged(TheTime);
+            }
         }
 
 
