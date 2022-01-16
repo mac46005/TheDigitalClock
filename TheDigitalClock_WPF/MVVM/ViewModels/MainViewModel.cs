@@ -24,7 +24,7 @@ namespace TheDigitalClock_WPF.MVVM.ViewModels
         }
         public MainViewModel()
         {
-            IViewModel clockVM = Bootstrapper.Resolver<IHelloWorldViewModel>();
+            IViewModel clockVM = Bootstrapper.Resolver<DigitalClockViewModel>();
             CurrentView = clockVM;
 
         }

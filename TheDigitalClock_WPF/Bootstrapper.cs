@@ -25,7 +25,7 @@ namespace TheDigitalClock_WPF
                 {
                     Start();
                 }
-                _mainViewModel = _rootScope.Resolve<IMainViewModel>();
+                _mainViewModel = _rootScope.Resolve<MainViewModel>();
                 return _mainViewModel;
             }
 
@@ -40,20 +40,23 @@ namespace TheDigitalClock_WPF
 
             var builder = new ContainerBuilder();
             var assemblies = new[] { Assembly.GetExecutingAssembly() };
-
-            builder.RegisterAssemblyTypes(assemblies)
-                .Where(t => typeof(IViewModel).IsAssignableFrom(t) && !typeof(ITransientViewModel).IsAssignableFrom(t))
-                .AsImplementedInterfaces();
             builder.RegisterAssemblyTypes(assemblies)
                 .Where(t => typeof(IViewModel).IsAssignableFrom(t))
-                .Where(t =>
-                {
-                    var isAssignable = typeof(ITransientViewModel).IsAssignableFrom(t);
-                    return isAssignable;
-                })
-                .AsImplementedInterfaces()
-                .ExternallyOwned();
+                .InstancePerDependency();
 
+
+
+            //builder.RegisterAssemblyTypes(assemblies)
+            //    .Where(t => typeof(IViewModel).IsAssignableFrom(t))
+            //    .Where(t =>
+            //    {
+            //        var isAssignable = typeof(ITransientViewModel).IsAssignableFrom(t);
+            //        return isAssignable;
+            //    })
+            //    .AsImplementedInterfaces()
+            //    .ExternallyOwned();
+
+            
 
             _rootScope = builder.Build();
 
