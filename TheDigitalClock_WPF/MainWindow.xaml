@@ -8,10 +8,8 @@
         Title="MainWindow" Height="450" Width="800"
         
         xmlns:viewModels="clr-namespace:TheDigitalClock_WPF.MVVM.ViewModels">
-    <Window.DataContext>
-        <viewModels:MainViewModel/>
-    </Window.DataContext>
     <Grid>
-        <ContentControl Content="{Binding CurrentViewModel}"/>
+        <ContentControl Content="{Binding CurrentViewModel}"
+                        />
     </Grid>
 </Window>

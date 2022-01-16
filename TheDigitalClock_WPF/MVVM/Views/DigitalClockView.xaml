@@ -9,14 +9,12 @@
              
              xmlns:viewModels="clr-namespace:TheDigitalClock_WPF.MVVM.ViewModels">
 
-    <UserControl.DataContext>
-        <viewModels:DigitalClockViewModel/>
-    </UserControl.DataContext>
 
     <Border>
         <Grid>
             <Viewbox>
                 <StackPanel>
+                    <TextBlock Text="TEST"/>
                     <TextBlock Text="{Binding TheDate}"/>
                     <TextBlock Text="{Binding TheTime}"/>
                 </StackPanel>

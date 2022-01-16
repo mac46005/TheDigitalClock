@@ -19,7 +19,7 @@ namespace TheDigitalClock_WPF
             base.OnStartup(e);
             Bootstrapper.StartConfiguration();
             var window = new MainWindow();
-            window.DataContext = Bootstrapper.Resolve<MainViewModel>();
+            window.DataContext = new MainViewModel();
 
             window.Closed += Window_Closed;
             window.Show();

@@ -29,7 +29,7 @@ namespace TheDigitalClock_WPF
 
             builder.RegisterAssemblyTypes(assemblies)
                 .Where(t => typeof(IViewModel).IsAssignableFrom(t))
-                .AsImplementedInterfaces();
+                .AsSelf();
 
             _rootScope = builder.Build();
         }

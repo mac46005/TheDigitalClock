@@ -13,7 +13,7 @@ namespace TheDigitalClock_WPF.MVVM.ViewModels
 
 
 
-        private string _theDate;
+        private string _theDate = "This bitch";
 
         public string TheDate
         {
@@ -26,7 +26,7 @@ namespace TheDigitalClock_WPF.MVVM.ViewModels
         }
 
 
-        private string _theTime;
+        private string _theTime = "Dont be working correctly...:(";
 
         public string TheTime
         {
@@ -43,14 +43,17 @@ namespace TheDigitalClock_WPF.MVVM.ViewModels
         public DigitalClockViewModel()
         {
             _timer.Interval = new TimeSpan(0, 0, 1);
-            _timer.Tick += _timer_Tick;
+            //_timer.Tick += _timer_Tick;
             _timer.Start();
         }
+
+
+
+
 
         private void _timer_Tick(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
-
             TheDate = dateTime.ToString("D");
             TheTime = $"{dateTime.Hour.ToString("D2")} : {dateTime.Minute.ToString("D2")} : {dateTime.Minute.ToString("D2")}";
         }
