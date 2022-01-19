@@ -16,22 +16,28 @@ namespace TheDigitalClock.MVVM.ViewModels
         public string ClockText
         {
             get { return _clockText; }
-            set { _clockText = value; }
+            private set { _clockText = value; }
         }
 
 
         public DigitalClockViewModel()
         {
-            _timer = new DispatcherTimer();
-            _timer.Interval = new TimeSpan(0,0,1);
-            _timer.Tick += _timer_Tick;
+            _timer = new DispatcherTimer(DispatcherPriority.Render);
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += (o, e) =>
+            {
+                OnPropertyChanged("ClockText");
+                DateTime dt = DateTime.Now;
+                ClockText = $"{dt.ToString("D")}{Environment.NewLine}" +
+                    $"{dt.Hour.ToString("D2")}:{dt.Minute.ToString("D2")}:{dt.Second.ToString("D2")}";
+                
+            };
+            _timer.Start();
         }
 
-        private  void _timer_Tick(object sender, EventArgs e)
+        private void _timer_Tick(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Now;
-            ClockText = $"{dt.ToString("D")}\n" + 
-                $"{dt.Hour.ToString("D2")}:{dt.Minute.ToString("D2")}:{dt.Second.ToString("D2")}";
+
         }
     }
 }

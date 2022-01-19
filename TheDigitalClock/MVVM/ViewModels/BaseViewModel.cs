@@ -12,7 +12,7 @@ namespace TheDigitalClock.MVVM.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName]string? propertyName = null)
+        protected void OnPropertyChanged(string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
