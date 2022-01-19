@@ -55,7 +55,7 @@
 
             <Grid Grid.Row="1"
                   Grid.Column="1">
-                <ContentControl Content="{Binding CurrentView}"/>
+                <ContentControl Content="{Binding ViewModel}"/>
             </Grid>
         </Grid>
         

@@ -28,6 +28,18 @@ namespace TheDigitalClock.MVVM.ViewModels
 
 
             MenuItemsCollection = new CollectionViewSource { Source = navigationItems };
+
+            ViewModel = new DigitalClockViewModel();
+        }
+
+
+
+        private object _viewModel;
+
+        public object ViewModel
+        {
+            get { return _viewModel; }
+            set { _viewModel = value; }
         }
 
     }

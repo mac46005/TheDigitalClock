@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:TheDigitalClock.MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <Border Background="Purple"
+            CornerRadius="10">
+        <Viewbox HorizontalAlignment="Stretch">
+            <StackPanel>
+                <Label Content="{Binding ClockText}"/>
+            </StackPanel>
+        </Viewbox>
+    </Border>
 </UserControl>
