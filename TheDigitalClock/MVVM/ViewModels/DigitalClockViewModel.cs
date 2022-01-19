@@ -9,7 +9,7 @@ namespace TheDigitalClock.MVVM.ViewModels
 {
     public class DigitalClockViewModel : BaseViewModel
     {
-        private readonly DispatcherTimer _timer;
+        DispatcherTimer _timer;
 
         private string _clockText;
 
@@ -22,22 +22,18 @@ namespace TheDigitalClock.MVVM.ViewModels
 
         public DigitalClockViewModel()
         {
-            _timer = new DispatcherTimer(DispatcherPriority.Render);
+            _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);
-            _timer.Tick += (o, e) =>
-            {
-                OnPropertyChanged("ClockText");
-                DateTime dt = DateTime.Now;
-                ClockText = $"{dt.ToString("D")}{Environment.NewLine}" +
-                    $"{dt.Hour.ToString("D2")}:{dt.Minute.ToString("D2")}:{dt.Second.ToString("D2")}";
-                
-            };
+            _timer.Tick += _timer_Tick;
             _timer.Start();
         }
 
         private void _timer_Tick(object sender, EventArgs e)
         {
-
+            OnPropertyChanged("ClockText");
+            DateTime dt = DateTime.Now;
+            ClockText = $"{dt.ToString("D")}{Environment.NewLine}" +
+                $"{dt.Hour.ToString("D2")}:{dt.Minute.ToString("D2")}:{dt.Second.ToString("D2")}";
         }
     }
 }
