@@ -18,7 +18,6 @@ namespace TheDigitalClock
         {
             base.OnStartup(e);
             Window window = new MainWindow();
-            window.DataContext = new MainViewModel();
             window.Show();
 
 
