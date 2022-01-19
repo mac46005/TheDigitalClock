@@ -11,12 +11,20 @@ namespace TheDigitalClock.MVVM.ViewModels
     {
         DispatcherTimer _timer;
 
-        private string _clockText;
+        private string _dateText;
 
-        public string ClockText
+        public string DateText
         {
-            get { return _clockText; }
-            private set { _clockText = value; }
+            get { return _dateText; }
+            set { _dateText = value; }
+        }
+
+        private string _timeText;
+
+        public string TimeText
+        {
+            get { return _timeText; }
+            set { _timeText = value; }
         }
 
 
@@ -30,10 +38,12 @@ namespace TheDigitalClock.MVVM.ViewModels
 
         private void _timer_Tick(object sender, EventArgs e)
         {
-            OnPropertyChanged("ClockText");
+            
             DateTime dt = DateTime.Now;
-            ClockText = $"{dt.ToString("D")}{Environment.NewLine}" +
-                $"{dt.Hour.ToString("D2")}:{dt.Minute.ToString("D2")}:{dt.Second.ToString("D2")}";
+            DateText = $"{dt.ToString("D")}";
+            TimeText = $"{dt.Hour.ToString("D2")}:{dt.Minute.ToString("D2")}:{dt.Second.ToString("D2")}";
+            OnPropertyChanged("DateText");
+            OnPropertyChanged("TimeText");
         }
     }
 }

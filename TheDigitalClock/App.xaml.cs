@@ -19,8 +19,6 @@ namespace TheDigitalClock
             base.OnStartup(e);
             Window window = new MainWindow();
             window.Show();
-
-
         }
     }
 }

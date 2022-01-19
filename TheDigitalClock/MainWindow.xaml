@@ -21,43 +21,32 @@
     </Window.DataContext>
     <Grid>
         
-        <Border Background="LightBlue"
+        <Border Background="DarkGray"
                 CornerRadius="25,25,100,0"
                 MouseDown="Border_MouseDown"/>
-        <Border Background="Green"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Height="300"
-                Width="100"
-                CornerRadius="0,5,5,0">
-            <Grid>
-                <ItemsControl ItemsSource="{Binding SourceCollection}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton Tag="{Binding NavImage}"
-                                         GroupName="MainNavGroup"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </Grid>
-        </Border>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="400"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="450"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="1"
-                  Grid.Column="1">
-                <ContentControl Content="{Binding ViewModel}"/>
-            </Grid>
-        </Grid>
         
+        
+        <Border HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Background="#333"
+                Width="200"
+                Height="20"
+                CornerRadius="0,0,5,5">
+            <ItemsControl ItemsSource="{Binding SourceCollection}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Width="40" Background="Transparent">
+                            <Image Height="15" Width="15" Source="{Binding NavImage}"/>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Border>
+        <ContentControl Content="{Binding ViewModel}"/>
     </Grid>
 </Window>
